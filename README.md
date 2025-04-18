@@ -37,7 +37,7 @@ The goal of this project was to:
   - max_row_count - Number of rows in the data.
   - last_transponder_seen_at - The time the last transponder was seen at.
   - most_popular_destination - What was the most seen destination in the dataset.
-  - count_of_unique_transponders - List out all the unique transponders. (the transponders are in the icao24 field).
+  - count_of_unique_transponders - Count out all the unique transponders. (the transponders are in the icao24 field).
 - Json output example:
 ```json
 {
