@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flight Metrics</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #f5f5f5;
+    }
+    h1 {
+      color: #333;
+    }
+    .metric-box {
+      background: white;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-top: 1rem;
+      max-width: 500px;
+    }
+    .metric {
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Flight Data Metrics</h1>
+  <div class="metric-box">
+    <p class="metric"><strong>Row Count:</strong> <span id="rowCount">Loading...</span></p>
+    <p class="metric"><strong>Last Seen:</strong> <span id="lastSeen">Loading...</span></p>
+    <p class="metric"><strong>Most Popular Destination:</strong> <span id="popularDest">Loading...</span></p>
+    <p class="metric"><strong>Unique Transponders:</strong> <span id="uniqueCount">Loading...</span></p>
+  </div>
+
+  <script>
+    fetch('https://cpltjdfsr8.execute-api.us-east-1.amazonaws.com/raft/metrics')  // Replace with your actual API URL
+      .then(res => res.json())
+      .then(data => {
+        var obj = JSON.parse(data.body);
+        var row_count = (obj[0]['row_count']);
+        var last_transponder_seen_at = (obj[0]['last_transponder_seen_at']);
+        var most_popular_destination = (obj[0]['most_popular_destination']);
+        var count_of_unique_transponders = (obj[0]['count_of_unique_transponders'])
+        document.getElementById('rowCount').textContent = row_count;
+        document.getElementById('lastSeen').textContent = last_transponder_seen_at;
+        document.getElementById('popularDest').textContent = most_popular_destination;
+        document.getElementById('uniqueCount').textContent = count_of_unique_transponders;
+      })
+      .catch(err => {
+        console.error("Error loading metrics:", err);
+        document.querySelector('.metric-box').innerHTML = "<p>Could not load metrics. Check API/CORS settings.</p>";
+      });
+  </script>
+
+</body>
+</html>
