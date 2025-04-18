@@ -65,3 +65,10 @@ Lambda packaging | Used zip to bundle and deploy my lambda functions to provide 
 - **load_package, metric_package** - Zip these packages and deploy them as a lambda function. You can read into the files to see how I structured the deployment.
 - **example.env** - Used to connect to your Postgresql database using the psycopg library.
 - **index.html** - My frontend HTML/JS code for fetching and displaying the data using S3 static website.
+
+---
+
+# References I used
+- https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PostgreSQL.S3Import.Overview.html
+- https://www.psycopg.org/docs/usage.html
+- https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-example-access-permissions.html
