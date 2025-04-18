@@ -62,6 +62,6 @@ Lambda packaging | Used zip to bundle and deploy my lambda functions to provide 
 ---
 
 # What is provided in this repo:
-*load_package, metric_package* - Zip these packages and deploy them as a lambda function. You can read into the files to see how I structured the deployment.
-*example.env* - Used to connect to your Postgresql database using the psycopg library.
-*index.html* - My frontend HTML/JS code for fetching and displaying the data using S3 static website.
+- **load_package, metric_package** - Zip these packages and deploy them as a lambda function. You can read into the files to see how I structured the deployment.
+- **example.env** - Used to connect to your Postgresql database using the psycopg library.
+- **index.html** - My frontend HTML/JS code for fetching and displaying the data using S3 static website.
