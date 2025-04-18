@@ -30,14 +30,14 @@ The goal of this project was to:
 ## Endpoints
 ### \load (POST)
 - Triggers a Lambda function that:
-  - Downloads the latest CSV from the S3 Bucket
-  - Extracts and transforms the data and loads it into the Postresql database
+  - Downloads the latest CSV from the S3 Bucket.
+  - Extracts and transforms the data and loads it into the Postresql database.
 ### \metrics (GET)
 - Instructions were to extract 4 data points:
   - max_row_count - Number of rows in the data.
   - last_transponder_seen_at - The time the last transponder was seen at.
   - most_popular_destination - What was the most seen destination in the dataset.
-  - count_of_unique_transponders - List out all the unique transponders. (the transponders are in the icao24 field)
+  - count_of_unique_transponders - List out all the unique transponders. (the transponders are in the icao24 field).
 - Json output example:
 ```json
 {
@@ -54,12 +54,14 @@ The goal of this project was to:
 | Decision | Why |
 |----------|-----|
 Serverless Architecture | Scalable, cost-effective, no server maintanence
-S3 for static frontend | Simple hosting, integrates well with other AWS services
-Javascript frontend | required for the API call from a static site (using Fetch())
-CORS configuration | Needed to allow frontend to call the API Gateway from a different domain
-Lambda packaging | Used zip to bundle and deploy my lambda functions to provide dependencies for Python
+S3 for static frontend | Simple hosting, integrates well with other AWS services.
+Javascript frontend | required for the API call from a static site (using Fetch()).
+CORS configuration | Needed to allow frontend to call the API Gateway from a different domain.
+Lambda packaging | Used zip to bundle and deploy my lambda functions to provide dependencies for Python.
 
 ---
 
 # What is provided in this repo:
-
+load_package, metric_package - Zip these packages and deploy them as a lambda function. You can read into the files to see how I structured the deployment.
+example.env - Used to connect to your Postgresql database using the psycopg library.
+index.html - My frontend HTML/JS code for fetching and displaying the data using S3 static website.
