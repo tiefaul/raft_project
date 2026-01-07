@@ -10,7 +10,7 @@ The goal of this project was to:
 - Expose a REST API with endpoints to load data and return key metrics. Endpoint being \load and \metrics.
 - Build a static frontend that displays the metrics using the API and a AWS S3 static website.
 
-> Note: This is not a rundown of everything I did. I simply want to provide examples of what I did. You will still have to configure all permissions and networking yourself.
+> Note: This is not a rundown of everything I did. I simply want to provide examples. You will still have to configure all permissions and networking yourself.
 
 ---
 
